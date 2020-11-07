@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Form() {
+function Form({ value, onClick, onSubmit }) {
     return (
-        <>
-            <form className="add_form">
-                <input type="text" placeholder="Add details" />
+        <section>
+            <form className="add_form" onSubmit={onSubmit}>
+                <input type="text" className="input_form" value={value} placeholder="add details" onChange={onClick} />
                 <button type="submit">Add</button>
             </form>
-        </>
+        </section>
     )
 }
 

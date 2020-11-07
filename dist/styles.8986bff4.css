@@ -23,7 +23,7 @@ a {
     flex-direction: row;
 }
 
-input {
+.input_form {
     width: 100%;
     padding-block: 8px;
     border-radius: 5px;
@@ -40,6 +40,20 @@ button {
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-block-start: 32px;
+}
+
+.list-todo {
+    margin-inline-start: 32px;
+}
+
+.completed {
+    text-decoration: line-through;
 }
 
 /*# sourceMappingURL=/styles.8986bff4.css.map */

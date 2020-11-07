@@ -1,8 +1,18 @@
 import React from 'react';
 
-function Completed() {
+function Completed({todo, handleChange}) {
     return (
-        <h1>I am completed</h1>
+        <>
+         {todo.completed 
+            ? <article className="container">
+                <input className="checkbox" onClick={() => handleChange(todo.id)} type="checkbox" />
+                <div className={todo.completed ? 'completed list-todo' : ''}>
+                    {todo.todo}
+                </div>
+            </article> 
+            : ''
+        }
+        </>
     )
 }
 

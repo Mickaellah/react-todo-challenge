@@ -1,14 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
         <>
             <nav>
                 <ul>
-                    <li><NavLink to="/all">All</NavLink></li>
-                    <li><NavLink to="/Active">Active</NavLink></li>
-                    <li><NavLink to="/completed">Completed</NavLink></li>
+                    <li><Link to="/">All</Link></li>
+                    <li><Link to="/active">Active</Link></li>
+                    <li><Link to="/completed">Completed</Link></li>
                 </ul>
             </nav>
             <hr />
