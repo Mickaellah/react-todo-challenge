@@ -33935,7 +33935,7 @@ function All(_ref) {
     },
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: todo.completed ? 'completed list-todo' : ''
+    className: todo.completed ? 'completed' : 'list-todo'
   }, todo.todo));
 }
 
