@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Form from '../components/Form';
@@ -11,10 +11,10 @@ import Completed from '../components/CompletedPage';
 function App() {
     const [ text, setText ] = useState('');
     const [ todo, setTodo ] = useState([]);
-    console.log(text);
-    console.log(todo);
+    const inputValue = useRef(null);
+    
+
     function handleClick(event) {
-        console.log(event.target.value);
         setText(event.target.value);
     }
 
@@ -29,12 +29,11 @@ function App() {
         ]);
     }
 
-
-
     function handleSubmit(event) {
         event.preventDefault();
         newTodo();
         setText('');
+        inputValue.current.focus();
     }
 
     function handleChange(id) {
@@ -49,7 +48,7 @@ function App() {
     return (
         <div>
             <NavBar />
-            <Form value={text} onClick={handleClick} onSubmit={handleSubmit}/>
+            <Form inputValue={inputValue} value={text} onClick={handleClick} onSubmit={handleSubmit}/>
             {todo.map((todo) => (
                 <Switch key={todo.id}>
                     <Route exact path="/" key={todo.id}>

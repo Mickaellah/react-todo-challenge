@@ -33866,13 +33866,15 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Form(_ref) {
-  var value = _ref.value,
+  var inputValue = _ref.inputValue,
+      value = _ref.value,
       onClick = _ref.onClick,
       onSubmit = _ref.onSubmit;
   return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("form", {
     className: "add_form",
     onSubmit: onSubmit
   }, /*#__PURE__*/_react.default.createElement("input", {
+    ref: inputValue,
     type: "text",
     className: "input_form",
     value: value,
@@ -34066,11 +34068,9 @@ function App() {
       todo = _useState4[0],
       setTodo = _useState4[1];
 
-  console.log(text);
-  console.log(todo);
+  var inputValue = (0, _react.useRef)(null);
 
   function handleClick(event) {
-    console.log(event.target.value);
     setText(event.target.value);
   }
 
@@ -34086,6 +34086,7 @@ function App() {
     event.preventDefault();
     newTodo();
     setText('');
+    inputValue.current.focus();
   }
 
   function handleChange(id) {
@@ -34098,6 +34099,7 @@ function App() {
   }
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_NavBar.default, null), /*#__PURE__*/_react.default.createElement(_Form.default, {
+    inputValue: inputValue,
     value: text,
     onClick: handleClick,
     onSubmit: handleSubmit
@@ -34174,7 +34176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49837" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52588" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
