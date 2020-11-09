@@ -33974,7 +33974,9 @@ function Active(_ref) {
 
 var _default = Active;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/CompletedPage.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"assets/icon-delete.svg":[function(require,module,exports) {
+module.exports = "/icon-delete.300a4c78.svg";
+},{}],"components/CompletedPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33983,6 +33985,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _iconDelete = _interopRequireDefault(require("../assets/icon-delete.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34000,19 +34004,23 @@ function Completed(_ref) {
     },
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: todo.completed ? 'completed list-todo' : ''
+    className: todo.completed ? 'completed' : 'list-todo'
   }, todo.todo), /*#__PURE__*/_react.default.createElement("button", {
     className: "delete",
+    id: todo.id,
     onClick: function onClick() {
       return handleDelete(todo.id);
     },
     type: "button"
-  }, "Delete")) : '');
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _iconDelete.default,
+    alt: "Delete button"
+  }))) : '');
 }
 
 var _default = Completed;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../assets/icon-delete.svg":"assets/icon-delete.svg"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

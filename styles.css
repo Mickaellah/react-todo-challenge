@@ -79,8 +79,7 @@ button {
 }
 
 .delete {
-    padding-inline: 16px;
-    padding-block: 8px;
-    align-items: flex-end;
-    margin-block-start: -8px;
+    background-color: transparent;
+    border: none;
+    margin-block-start: -16px;
 }
