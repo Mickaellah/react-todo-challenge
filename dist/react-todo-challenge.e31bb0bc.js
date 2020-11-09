@@ -33929,7 +33929,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function All(_ref) {
   var todo = _ref.todo,
       handleChange = _ref.handleChange;
-  return /*#__PURE__*/_react.default.createElement("article", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("article", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("input", {
     className: "checkbox",
@@ -33939,7 +33939,7 @@ function All(_ref) {
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: todo.completed ? 'completed' : 'list-todo'
-  }, todo.todo));
+  }, todo.todo)), /*#__PURE__*/_react.default.createElement("hr", null));
 }
 
 var _default = All;
@@ -33959,7 +33959,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Active(_ref) {
   var todo = _ref.todo,
       handleChange = _ref.handleChange;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !todo.completed ? /*#__PURE__*/_react.default.createElement("article", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !todo.completed ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("article", {
     className: "container"
   }, /*#__PURE__*/_react.default.createElement("input", {
     className: "checkbox",
@@ -33969,7 +33969,7 @@ function Active(_ref) {
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: todo.completed ? 'completed' : 'list-todo'
-  }, todo.todo)) : '');
+  }, todo.todo)), /*#__PURE__*/_react.default.createElement("hr", null)) : '');
 }
 
 var _default = Active;
@@ -33994,7 +33994,7 @@ function Completed(_ref) {
   var todo = _ref.todo,
       handleChange = _ref.handleChange,
       handleDelete = _ref.handleDelete;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, todo.completed ? /*#__PURE__*/_react.default.createElement("article", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, todo.completed ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("article", {
     className: "container",
     id: todo.id
   }, /*#__PURE__*/_react.default.createElement("input", {
@@ -34015,7 +34015,7 @@ function Completed(_ref) {
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _iconDelete.default,
     alt: "Delete button"
-  }))) : '');
+  }))), /*#__PURE__*/_react.default.createElement("hr", null)) : '');
 }
 
 var _default = Completed;
