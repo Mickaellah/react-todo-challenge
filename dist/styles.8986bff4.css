@@ -78,4 +78,11 @@ button {
     margin-inline-start: 32px;
 }
 
+.delete {
+    padding-inline: 16px;
+    padding-block: 8px;
+    align-items: flex-end;
+    margin-block-start: -8px;
+}
+
 /*# sourceMappingURL=/styles.8986bff4.css.map */

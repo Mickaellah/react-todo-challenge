@@ -45,6 +45,13 @@ function App() {
         setTodo(updateTodo);
     }
 
+    function handleDelete(id) {
+        console.log(id);
+        const newList = todo.filter((item) => item.id != id);
+
+        setTodo(newList);
+    }
+
     return (
         <div>
             <NavBar />
@@ -68,6 +75,7 @@ function App() {
                             key={todo.id} 
                             todo={todo} 
                             handleChange={handleChange}
+                            handleDelete={handleDelete}
                             />
                     </Route>
                 </Switch>

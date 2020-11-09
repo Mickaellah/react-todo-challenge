@@ -77,3 +77,10 @@ button {
     text-decoration: line-through;
     margin-inline-start: 32px;
 }
+
+.delete {
+    padding-inline: 16px;
+    padding-block: 8px;
+    align-items: flex-end;
+    margin-block-start: -8px;
+}

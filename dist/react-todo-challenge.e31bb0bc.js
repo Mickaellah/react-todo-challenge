@@ -33968,7 +33968,7 @@ function Active(_ref) {
     },
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: todo.completed ? 'completed list-todo' : ''
+    className: todo.completed ? 'completed' : 'list-todo'
   }, todo.todo)) : '');
 }
 
@@ -33988,9 +33988,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Completed(_ref) {
   var todo = _ref.todo,
-      handleChange = _ref.handleChange;
+      handleChange = _ref.handleChange,
+      handleDelete = _ref.handleDelete;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, todo.completed ? /*#__PURE__*/_react.default.createElement("article", {
-    className: "container"
+    className: "container",
+    id: todo.id
   }, /*#__PURE__*/_react.default.createElement("input", {
     className: "checkbox",
     onClick: function onClick() {
@@ -33999,7 +34001,13 @@ function Completed(_ref) {
     type: "checkbox"
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: todo.completed ? 'completed list-todo' : ''
-  }, todo.todo)) : '');
+  }, todo.todo), /*#__PURE__*/_react.default.createElement("button", {
+    className: "delete",
+    onClick: function onClick() {
+      return handleDelete(todo.id);
+    },
+    type: "button"
+  }, "Delete")) : '');
 }
 
 var _default = Completed;
@@ -34099,6 +34107,14 @@ function App() {
     setTodo(updateTodo);
   }
 
+  function handleDelete(id) {
+    console.log(id);
+    var newList = todo.filter(function (item) {
+      return item.id != id;
+    });
+    setTodo(newList);
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_NavBar.default, null), /*#__PURE__*/_react.default.createElement(_Form.default, {
     inputValue: inputValue,
     value: text,
@@ -34128,7 +34144,8 @@ function App() {
     }, /*#__PURE__*/_react.default.createElement(_CompletedPage.default, {
       key: todo.id,
       todo: todo,
-      handleChange: handleChange
+      handleChange: handleChange,
+      handleDelete: handleDelete
     })));
   }));
 }
